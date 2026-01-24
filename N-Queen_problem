@@ -1,0 +1,26 @@
+def solveNQueens(n):
+    res=[]
+    board=[['.']*n for _ in range(n)]
+    col=[False]*n
+    dia1=[False]*(2*n)
+    dia2=[False]*(2*n)
+    def backtrack(row):
+
+        if row==n:
+            res.append(["".join(r) for r in board])
+            return 
+
+        for co in range(n):
+            if col[co] or dia1[row-co+n] or dia2[row+co]:
+                continue
+
+            board[row][co]='Q'
+            col[co]=dia1[row-co+n]=dia2[row+co]=True
+
+            backtrack(row+1)
+
+            board[row][co]='.'
+            col[co]=dia1[row-co+n]=dia2[row+co]=False
+
+    backtrack(0)
+    return res
