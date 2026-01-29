@@ -1,5 +1,3 @@
-#DFS with BT
-
 def min_knight_moves_backtracking(n, start, target):
     knight_moves = [
         (2, 1), (2, -1), (-2, 1), (-2, -1),

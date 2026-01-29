@@ -1,8 +1,7 @@
 maze=[[0,1,1],[0,0,0],[0,1,0]]
 sol=[[0 for _ in range(len(maze))] for _ in range(len(maze))]
 N=3
-global ct
-ct=0
+
 def path(x,y,sol):
     if x==N-1 and y==N-1 and sol[x][y]==0:
         sol[x][y]=1
